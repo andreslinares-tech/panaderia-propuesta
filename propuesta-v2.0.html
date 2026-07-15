@@ -250,7 +250,7 @@
           <tbody>
             <tr><td>Negocio</td><td>Panadería de consumo masivo · distribución (B2B) + consumidor final</td></tr>
             <tr><td>Canales de atención</td><td><span class="pill pill-emerald">WhatsApp</span> <span class="pill pill-blue">Facebook</span> <span class="pill pill-violet">Instagram</span></td></tr>
-            <tr><td>Volumen</td><td>~1.000 mensajes / día · un solo número (fijo con WhatsApp)</td></tr>
+            <tr><td>Volumen</td><td>~5.000 mensajes / día entre los 3 canales · un solo número (fijo con WhatsApp)</td></tr>
             <tr><td>Equipo</td><td>6 agentes (reparten WhatsApp y redes) + 2 supervisores · <span class="pill pill-zinc">8 usuarios</span></td></tr>
             <tr><td>Stack actual</td><td><span class="pill pill-amber">Atom · bot por script</span> <span class="pill pill-zinc">Odoo (B2B)</span></td></tr>
             <tr><td>Reputación</td><td>Comentarios y quejas en redes sin seguimiento · oportunidades comerciales que se pierden</td></tr>
@@ -307,7 +307,7 @@
             <span class="font-mono text-[10px] uppercase tracking-wider text-white/60">Base sólida</span>
           </div>
           <ul class="space-y-2.5 text-sm text-white/90">
-            <li class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">›</span><span>~1.000 mensajes/día — demanda real y constante</span></li>
+            <li class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">›</span><span>~5.000 mensajes/día — demanda real y constante</span></li>
             <li class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">›</span><span>Inversión sostenida en pauta que trae leads</span></li>
             <li class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">›</span><span>Equipo de 8 personas dedicado a atención</span></li>
             <li class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">›</span><span>Un número único con WhatsApp ya funcionando</span></li>
@@ -335,7 +335,59 @@
     <section id="plan" class="mb-20 md:mb-24 scroll-mt-12">
       <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-violet-300 mb-3">04 · Plan</p>
       <h2 class="display text-2xl md:text-4xl font-bold tracking-tight mb-3">Seis fases, llave en mano</h2>
-      <p class="serif-italic text-white/85 mb-8 max-w-3xl">Lo armamos completo y lo dejamos andando, sin cortar la atención actual.</p>
+      <p class="serif-italic text-white/85 mb-6 max-w-3xl">Así se ve del lado del cliente, y así lo implementamos — sin cortar la atención actual.</p>
+
+      <!-- Flujo cliente: el recorrido de un mensaje -->
+      <div class="diagram-card mb-8">
+        <div class="flex items-center justify-between mb-5">
+          <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">El recorrido de un mensaje</p>
+          <p class="font-mono text-[10px] text-white/40">scroll →</p>
+        </div>
+        <div class="overflow-x-auto pb-3 -mx-6 px-6 md:-mx-8 md:px-8">
+          <div class="flex gap-3 items-stretch min-w-max">
+
+            <div class="phase-card">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-cyan-300">Paso 1</span>
+              <h3 class="display text-sm font-semibold text-white">Entra el mensaje</h3>
+              <span class="self-start pill pill-cyan">IG · FB · WhatsApp</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Cualquier persona escribe por cualquiera de los tres canales.</p>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="phase-card">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-violet-300">Paso 2</span>
+              <h3 class="display text-sm font-semibold text-white">El bot entiende</h3>
+              <span class="self-start pill pill-violet">No se traba</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Entiende lenguaje natural aunque la persona se salga del guion o solo diga "hola".</p>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="phase-card">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-violet-300">Paso 3</span>
+              <h3 class="display text-sm font-semibold text-white">Filtra la intención</h3>
+              <span class="self-start pill pill-violet">Precio · pedido · queja</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Detecta qué necesita: precio, pedido, envío, horarios o una queja para gestionar.</p>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="phase-card">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-violet-300">Paso 4</span>
+              <h3 class="display text-sm font-semibold text-white">Deriva o resuelve</h3>
+              <span class="self-start pill pill-violet">Reparto + pausa</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Pasa al agente disponible, o dispara la automatización de reputación si es un comentario/queja.</p>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="phase-card" style="border-color: rgba(16, 185, 129, 0.4); box-shadow: 0 0 20px -10px rgba(16, 185, 129, 0.3);">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-emerald-300">Paso 5</span>
+              <h3 class="display text-sm font-semibold text-white">Seguimiento + reporte</h3>
+              <span class="self-start pill pill-emerald">Automático</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Queda en el pipeline, el seguimiento se dispara solo y el supervisor lo ve en su tablero.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
 
       <div class="diagram-card">
         <div class="flex items-center justify-between mb-5">
@@ -480,13 +532,14 @@
           </div>
         </summary>
         <div class="wf-body">
-          <p class="text-sm text-white/75 mb-4 serif-italic">Lo que hoy se hace a mano — repartir, seguir, derivar — queda andando solo.</p>
+          <p class="text-sm text-white/75 mb-4 serif-italic">Lo que hoy se hace a mano — repartir, seguir, derivar — queda andando solo. Y cada automatización se monta en los <span class="text-white">tres canales</span>: Instagram, Facebook y WhatsApp.</p>
           <table class="step-table">
             <thead><tr><th>Workflow</th><th>Detalle</th></tr></thead>
             <tbody>
+              <tr><td>Cobertura multicanal</td><td><span class="pill pill-violet">Instagram</span> <span class="pill pill-blue">Facebook</span> <span class="pill pill-emerald">WhatsApp</span> — cada flujo configurado en los tres.</td></tr>
               <tr><td>Reparto por canal</td><td>Asignación automática al agente correcto según canal y disponibilidad.</td></tr>
               <tr><td>Estado / pausa de disponibilidad</td><td>Quien sale a almorzar o se levanta se pone en pausa y no le caen mensajes hasta volver.</td></tr>
-              <tr><td>Seguimiento 2h / 24h</td><td>Recordatorios automáticos para que ningún lead quede sin respuesta.</td></tr>
+              <tr><td>Seguimiento 2h / 24h</td><td>Recordatorios automáticos en los 3 canales para que ningún lead quede sin respuesta.</td></tr>
               <tr><td>Handoffs</td><td>Derivaciones bot → humano por pedido de agenda, imagen o transferencia.</td></tr>
             </tbody>
           </table>
@@ -507,7 +560,7 @@
           <table class="step-table">
             <thead><tr><th>Tarea</th><th>Detalle</th></tr></thead>
             <tbody>
-              <tr><td>Gestión de comentarios/quejas</td><td>Respuesta automática ("recibimos tu mensaje, te escribimos por DM") + apertura de conversación privada y seguimiento.</td></tr>
+              <tr><td>Gestión de comentarios/quejas</td><td>En comentarios de <span class="pill pill-violet">Instagram</span> y <span class="pill pill-blue">Facebook</span>: respuesta automática ("recibimos tu mensaje, te escribimos por DM") + apertura de conversación privada y seguimiento.</td></tr>
               <tr><td>Aprovechamiento de comentarios</td><td>Comentarios positivos o casuales se capturan como oportunidad comercial.</td></tr>
               <tr><td>Reportería para supervisores</td><td>Visibilidad del volumen, reparto y desempeño del equipo para los 2 supervisores.</td></tr>
             </tbody>
@@ -660,7 +713,7 @@
           <div class="pricing-row">
             <div>
               <p class="font-medium">WhatsApp API oficial (Meta)</p>
-              <p class="text-xs text-white/55 mt-0.5">Mantiene el número actual · cero riesgo de bloqueo · + consumo Meta por conversación</p>
+              <p class="text-xs text-white/55 mt-0.5">Mantiene el número actual · cero riesgo de bloqueo · + consumo Meta por conversación (a ~5.000 msgs/día es un costo variable a presupuestar)</p>
             </div>
             <p class="font-mono text-lg font-semibold">USD 20<span class="text-xs text-white/55 font-normal">/mes</span></p>
           </div>
@@ -692,7 +745,7 @@
           <p class="font-mono text-[10px] uppercase tracking-wider text-white/60">Para arrancar</p>
           <p class="display text-2xl md:text-3xl font-bold text-emerald-300">USD 3.000 + software</p>
         </div>
-        <p class="text-xs text-white/55">USD 3.000 implementación completa (one-time) + USD 117/mes de software (USD 97 GHL con IA + USD 20 WhatsApp API) + consumo Meta por conversación.</p>
+        <p class="text-xs text-white/55">USD 3.000 implementación completa (one-time) + USD 117/mes de software (USD 97 GHL con IA + USD 20 WhatsApp API) + consumo Meta por conversación según volumen (~5.000 msgs/día).</p>
       </div>
     </section>
 
@@ -736,7 +789,7 @@
         <div class="flex items-start gap-3">
           <span class="font-mono text-xs text-amber-300 font-semibold mt-0.5">R4</span>
           <div>
-            <p class="font-medium mb-1">Volumen alto (~1.000 mensajes/día)</p>
+            <p class="font-medium mb-1">Volumen alto (~5.000 mensajes/día)</p>
             <p class="text-sm text-white/75"><span class="text-amber-300 font-semibold">Mitigación:</span> el reparto y el estado/pausa se configuran para distribuir la carga entre los 6 agentes sin saturar a nadie.</p>
           </div>
         </div>

@@ -90,7 +90,7 @@
     <nav class="space-y-0.5">
       <a href="#cliente" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">01 · Cliente</a>
       <a href="#diagnostico" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">02 · Diagnóstico</a>
-      <a href="#entregamos" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">03 · Qué entregamos</a>
+      <a href="#entregamos" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">03 · Qué haríamos</a>
       <a href="#fases" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">04 · Fases</a>
       <a href="#pricing" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">05 · Inversión</a>
       <a href="#next" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">06 · Próximos pasos</a>
@@ -147,9 +147,9 @@
       <div class="flex flex-wrap gap-2 mt-7">
         <span class="pill pill-violet">Bot IA multicanal</span>
         <span class="pill pill-cyan">8 usuarios</span>
-        <span class="pill pill-amber">~1.000 mensajes/día</span>
+        <span class="pill pill-amber">~5.000 mensajes/día</span>
         <span class="pill pill-violet">Pipeline + seguimiento</span>
-        <span class="pill pill-emerald">USD 1.500</span>
+        <span class="pill pill-emerald">USD 1.800</span>
       </div>
       <div class="flex flex-wrap gap-3 mt-8">
         <a href="#fases" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-medium transition glow-violet">
@@ -173,7 +173,7 @@
           <tbody>
             <tr><td>Negocio</td><td>Panadería de consumo masivo · distribución (B2B) + consumidor final</td></tr>
             <tr><td>Canales de atención</td><td><span class="pill pill-emerald">WhatsApp</span> <span class="pill pill-cyan">Facebook</span> <span class="pill pill-violet">Instagram</span></td></tr>
-            <tr><td>Volumen</td><td>~1.000 mensajes / día · un solo número (fijo con WhatsApp)</td></tr>
+            <tr><td>Volumen</td><td>~5.000 mensajes / día entre los 3 canales · un solo número (fijo con WhatsApp)</td></tr>
             <tr><td>Equipo</td><td>6 agentes (reparten WhatsApp y redes) + 2 supervisores · <span class="pill pill-zinc">8 usuarios</span></td></tr>
             <tr><td>Stack actual</td><td><span class="pill pill-amber">Atom · bot por script</span> <span class="pill pill-zinc">Odoo (B2B)</span></td></tr>
             <tr><td>Implementador</td><td><span class="pill pill-cyan">Andrés Linares</span> · ALCONSULTING</td></tr>
@@ -196,7 +196,7 @@
         </div>
         <div class="pillar">
           <p class="font-mono text-[10px] uppercase tracking-wider text-cyan-300 mb-3">Volumen</p>
-          <p class="display text-3xl font-bold gradient-text mb-2">~1.000</p>
+          <p class="display text-3xl font-bold gradient-text mb-2">~5.000</p>
           <p class="text-sm text-white/80">mensajes por día entre WhatsApp, Facebook e Instagram — hoy sin un inbox unificado.</p>
         </div>
         <div class="pillar">
@@ -209,9 +209,63 @@
 
     <!-- 03 · QUÉ ENTREGAMOS -->
     <section id="entregamos" class="mb-20 md:mb-24 scroll-mt-12">
-      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-cyan-300 mb-3">03 · Qué entregamos</p>
+      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-cyan-300 mb-3">03 · Qué haríamos</p>
       <h2 class="display text-2xl md:text-4xl font-bold tracking-tight mb-3">El arranque, llave en mano</h2>
-      <p class="serif-italic text-white/85 mb-8 max-w-3xl">Lo armamos y lo dejamos andando. El equipo solo atiende — el bot filtra y reparte.</p>
+      <p class="serif-italic text-white/85 mb-8 max-w-3xl">Lo armamos y lo dejamos andando. El equipo solo atiende — el bot filtra y reparte. Así se ve, del lado del cliente:</p>
+
+      <!-- Flujo cliente: el recorrido de un mensaje -->
+      <div class="diagram-card mb-8">
+        <div class="flex items-center justify-between mb-5">
+          <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">El recorrido de un mensaje</p>
+          <p class="font-mono text-[10px] text-white/40">scroll →</p>
+        </div>
+        <div class="overflow-x-auto pb-3 -mx-6 px-6 md:-mx-8 md:px-8">
+          <div class="flex gap-3 items-stretch min-w-max">
+
+            <div class="phase-card">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-cyan-300">Paso 1</span>
+              <h3 class="display text-sm font-semibold text-white">Entra el mensaje</h3>
+              <span class="self-start pill pill-cyan">IG · FB · WhatsApp</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Cualquier persona escribe por cualquiera de los tres canales.</p>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="phase-card">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-violet-300">Paso 2</span>
+              <h3 class="display text-sm font-semibold text-white">El bot entiende</h3>
+              <span class="self-start pill pill-violet">No se traba</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Entiende lenguaje natural aunque la persona se salga del guion o solo diga "hola".</p>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="phase-card">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-violet-300">Paso 3</span>
+              <h3 class="display text-sm font-semibold text-white">Filtra la intención</h3>
+              <span class="self-start pill pill-violet">Precio · pedido · envío</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Detecta qué necesita: precio, pedido personalizado, envío, horarios o una queja.</p>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="phase-card">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-violet-300">Paso 4</span>
+              <h3 class="display text-sm font-semibold text-white">Deriva al agente</h3>
+              <span class="self-start pill pill-violet">Reparto + pausa</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Pasa la conversación al agente disponible. Quien está en pausa no recibe mensajes.</p>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="phase-card" style="border-color: rgba(16, 185, 129, 0.4); box-shadow: 0 0 20px -10px rgba(16, 185, 129, 0.3);">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-emerald-300">Paso 5</span>
+              <h3 class="display text-sm font-semibold text-white">Seguimiento</h3>
+              <span class="self-start pill pill-emerald">Automático</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Queda en el pipeline y el seguimiento se dispara solo. Ningún lead se cae.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <p class="serif-italic text-white/70 mb-6 max-w-3xl text-sm">Y esto es lo que dejamos montado para que ese recorrido funcione:</p>
 
       <div class="grid md:grid-cols-2 gap-4">
         <div class="pillar">
@@ -333,7 +387,7 @@
           <div class="pricing-row">
             <div>
               <p class="font-medium">WhatsApp API oficial (Meta)</p>
-              <p class="text-xs text-white/55 mt-0.5">Mantiene el número actual · cero riesgo de bloqueo · + consumo Meta por conversación</p>
+              <p class="text-xs text-white/55 mt-0.5">Mantiene el número actual · cero riesgo de bloqueo · + consumo Meta por conversación (a ~5.000 msgs/día es un costo variable a presupuestar)</p>
             </div>
             <p class="font-mono text-lg font-semibold">USD 20<span class="text-xs text-white/55 font-normal">/mes</span></p>
           </div>
@@ -345,7 +399,7 @@
         <div class="absolute top-0 right-0 px-3 py-1 text-[10px] font-mono uppercase tracking-wider bg-violet-600 text-white rounded-bl-xl">Fase 1 · Arranque</div>
         <span class="font-mono text-[10px] uppercase tracking-wider text-violet-300">One-time · implementación</span>
         <h3 class="display text-2xl md:text-3xl font-bold mt-1 mb-1">Arranque llave en mano</h3>
-        <p class="display text-5xl md:text-6xl font-bold tracking-tight mb-5"><span class="text-violet-200/80">USD</span> <span class="gradient-text">1.500</span></p>
+        <p class="display text-5xl md:text-6xl font-bold tracking-tight mb-5"><span class="text-violet-200/80">USD</span> <span class="gradient-text">1.800</span></p>
         <p class="text-sm text-white/80 mb-4 font-medium">Lo que está incluido:</p>
         <div class="grid md:grid-cols-2 gap-2.5 text-sm">
           <div class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">✓</span><span>Bot IA agente que entiende lenguaje natural</span></div>
@@ -363,9 +417,9 @@
       <div class="diagram-card mt-5 glow-emerald" style="border-color: rgba(16, 185, 129, 0.35);">
         <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
           <p class="font-mono text-[10px] uppercase tracking-wider text-white/60">Para arrancar</p>
-          <p class="display text-2xl md:text-3xl font-bold text-emerald-300">USD 1.500 + software</p>
+          <p class="display text-2xl md:text-3xl font-bold text-emerald-300">USD 1.800 + software</p>
         </div>
-        <p class="text-xs text-white/55">USD 1.500 implementación (one-time) + USD 117/mes de software (USD 97 GHL con IA + USD 20 WhatsApp API) + consumo Meta por conversación.</p>
+        <p class="text-xs text-white/55">USD 1.800 implementación (one-time) + USD 117/mes de software (USD 97 GHL con IA + USD 20 WhatsApp API) + consumo Meta por conversación según volumen (~5.000 msgs/día).</p>
       </div>
 
       <p class="text-xs text-white/45 mt-4 max-w-3xl">Esta es la <span class="text-white/70">Fase 1</span>. Reputación digital en redes, más automatizaciones y reportería para supervisores se incorporan después, en una segunda etapa que se cotiza aparte.</p>
