@@ -42,6 +42,7 @@
   .pill-amber   { background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.35); color: rgb(252, 211, 77); }
   .pill-cyan    { background: rgba(6, 182, 212, 0.15);  border: 1px solid rgba(6, 182, 212, 0.35);  color: rgb(165, 243, 252); }
   .pill-emerald { background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); color: rgb(167, 243, 208); }
+  .pill-blue    { background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: rgb(147, 197, 253); }
   .pill-zinc    { background: rgba(113, 113, 122, 0.15); border: 1px solid rgba(113, 113, 122, 0.35); color: rgb(212, 212, 216); }
 
   .step-table { width: 100%; border-collapse: collapse; font-size: 13px; }
@@ -212,6 +213,77 @@
       <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-cyan-300 mb-3">03 · Qué haríamos</p>
       <h2 class="display text-2xl md:text-4xl font-bold tracking-tight mb-3">El arranque, llave en mano</h2>
       <p class="serif-italic text-white/85 mb-8 max-w-3xl">Lo armamos y lo dejamos andando. El equipo solo atiende — el bot filtra y reparte. Así se ve, del lado del cliente:</p>
+
+      <!-- Mapa de arquitectura: canales -> agente IA -> pipeline por origen -->
+      <div class="diagram-card mb-8">
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60 mb-6">Mapa · de dónde entra el lead → a dónde llega</p>
+        <div class="flex flex-col md:flex-row md:items-stretch gap-4">
+
+          <!-- Canales de entrada -->
+          <div class="flex flex-col gap-2.5 md:flex-1">
+            <p class="font-mono text-[10px] uppercase tracking-wider text-white/50 mb-1">Entra por 3 canales</p>
+            <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
+              <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background:#a78bfa"></span>
+              <span class="font-medium text-sm">Instagram</span>
+              <span class="ml-auto pill pill-violet">DM · comentario</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
+              <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background:#93c5fd"></span>
+              <span class="font-medium text-sm">Facebook</span>
+              <span class="ml-auto pill pill-blue">DM · comentario</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">
+              <span class="w-2.5 h-2.5 rounded-full shrink-0" style="background:#6ee7b7"></span>
+              <span class="font-medium text-sm">WhatsApp</span>
+              <span class="ml-auto pill pill-emerald">mensaje directo</span>
+            </div>
+          </div>
+
+          <!-- Flecha -->
+          <div class="flex items-center justify-center text-violet-300/70 text-xl md:px-1">
+            <span class="inline-block rotate-90 md:rotate-0 font-mono">▸</span>
+          </div>
+
+          <!-- Agente IA -->
+          <div class="md:flex-1 rounded-xl border p-5 flex flex-col justify-center items-center text-center glow-violet" style="border-color: rgba(139,92,246,0.4); background: linear-gradient(135deg, rgba(124,58,237,0.18), rgba(34,211,238,0.05));">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3" style="background: rgba(139,92,246,0.2);">
+              <svg class="w-6 h-6 text-violet-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3.104a2.25 2.25 0 0 1 4.5 0M12 6v0M5 10h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2z M8.5 14.5v1M15.5 14.5v1"/></svg>
+            </div>
+            <h3 class="display font-semibold text-base mb-1">Lo agarra el Agente IA</h3>
+            <p class="text-xs text-white/80 leading-relaxed mb-3">Un solo cerebro entiende el mensaje, filtra la intención y califica el lead — sin trabarse aunque se salga del guion.</p>
+            <span class="pill pill-violet">Un agente para los 3 canales</span>
+          </div>
+
+          <!-- Flecha -->
+          <div class="flex items-center justify-center text-violet-300/70 text-xl md:px-1">
+            <span class="inline-block rotate-90 md:rotate-0 font-mono">▸</span>
+          </div>
+
+          <!-- Pipeline por origen -->
+          <div class="md:flex-1 rounded-xl border border-white/10 bg-white/[0.03] p-4 flex flex-col">
+            <p class="font-mono text-[10px] uppercase tracking-wider text-emerald-300 mb-3">Cae al pipeline · por canal de origen</p>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2">
+                <span class="w-2 h-2 rounded-full shrink-0" style="background:#a78bfa"></span>
+                <span class="text-sm">Nuevo lead</span>
+                <span class="ml-auto pill pill-violet">origen: IG</span>
+              </div>
+              <div class="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2">
+                <span class="w-2 h-2 rounded-full shrink-0" style="background:#93c5fd"></span>
+                <span class="text-sm">Nuevo lead</span>
+                <span class="ml-auto pill pill-blue">origen: FB</span>
+              </div>
+              <div class="flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2">
+                <span class="w-2 h-2 rounded-full shrink-0" style="background:#6ee7b7"></span>
+                <span class="text-sm">Nuevo lead</span>
+                <span class="ml-auto pill pill-emerald">origen: WA</span>
+              </div>
+            </div>
+            <p class="text-[11px] text-white/60 leading-relaxed mt-3">Cada lead entra etiquetado con su canal de origen. Se sabe siempre de dónde vino — para reportar y para derivar al agente que atiende ese canal.</p>
+          </div>
+
+        </div>
+      </div>
 
       <!-- Flujo cliente: el recorrido de un mensaje -->
       <div class="diagram-card mb-8">
