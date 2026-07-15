@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>Propuesta · Completa · Panadería · ALCONSULTING</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Geist+Mono:wght@400;500&family=Source+Serif+4:ital,wght@1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #14141c;
+    --surface-2: #1a1a24;
+    --border: rgba(255,255,255,0.06);
+    --border-strong: rgba(255,255,255,0.10);
+    --violet: #7c3aed;
+    --violet-300: rgb(196, 181, 253);
+    --violet-400: rgb(167, 139, 250);
+    --cyan-300: rgb(165, 243, 252);
+    --emerald-300: rgb(167, 243, 208);
+    --amber-300: rgb(252, 211, 77);
+  }
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: #f5f5fa; -webkit-font-smoothing: antialiased; }
+  .display { font-family: 'Space Grotesk', system-ui, sans-serif; }
+  .font-mono { font-family: 'Geist Mono', ui-monospace, monospace; }
+  .serif-italic { font-family: 'Source Serif 4', Georgia, serif; font-style: italic; }
+  html { scroll-behavior: smooth; }
+
+  .grain { position: fixed; inset: 0; pointer-events: none; opacity: 0.025; background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 4px 4px; z-index: 1; }
+
+  .gradient-text { background: linear-gradient(135deg, #7c3aed 0%, #22d3ee 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .gradient-violet { background: linear-gradient(135deg, #c4b5fd 0%, #7c3aed 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+  .glow-violet { box-shadow: 0 0 60px -15px rgba(124, 58, 237, 0.5); }
+  .glow-cyan { box-shadow: 0 0 40px -15px rgba(34, 211, 238, 0.4); }
+  .glow-emerald { box-shadow: 0 0 30px -15px rgba(16, 185, 129, 0.4); }
+
+  .toc-link { transition: color 0.15s, border-color 0.15s; }
+  .toc-link:hover { color: rgb(255 255 255); border-left-color: rgb(139 92 246); }
+
+  .diagram-card { background: rgba(20, 20, 28, 0.6); border: 1px solid var(--border); border-radius: 24px; padding: 28px; backdrop-filter: blur(8px); }
+  @media (min-width: 768px) { .diagram-card { padding: 32px; } }
+
+  .pill { display: inline-block; padding: 3px 9px; border-radius: 6px; font-size: 11px; font-family: 'Geist Mono', ui-monospace, monospace; font-weight: 500; }
+  .pill-violet  { background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.35); color: rgb(196, 181, 253); }
+  .pill-amber   { background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.35); color: rgb(252, 211, 77); }
+  .pill-cyan    { background: rgba(6, 182, 212, 0.15);  border: 1px solid rgba(6, 182, 212, 0.35);  color: rgb(165, 243, 252); }
+  .pill-emerald { background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.35); color: rgb(167, 243, 208); }
+  .pill-rose    { background: rgba(244, 63, 94, 0.15);  border: 1px solid rgba(244, 63, 94, 0.35);  color: rgb(253, 164, 175); }
+  .pill-blue    { background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: rgb(147, 197, 253); }
+  .pill-zinc    { background: rgba(113, 113, 122, 0.15); border: 1px solid rgba(113, 113, 122, 0.35); color: rgb(212, 212, 216); }
+
+  details.wf-card {
+    background: rgba(20, 20, 28, 0.5);
+    border: 1px solid var(--border-strong);
+    border-radius: 16px;
+    margin-bottom: 14px; overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  details.wf-card[open] { border-color: rgba(139, 92, 246, 0.4); box-shadow: 0 0 40px -15px rgba(124, 58, 237, 0.25); }
+  details.wf-card > summary {
+    padding: 18px 22px; cursor: pointer; list-style: none;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap;
+  }
+  details.wf-card > summary::-webkit-details-marker { display: none; }
+  details.wf-card > summary::after {
+    content: '＋'; font-family: 'Geist Mono', monospace;
+    color: rgb(167, 139, 250); font-size: 18px; flex-shrink: 0;
+  }
+  details.wf-card[open] > summary::after { content: '−'; }
+  details.wf-card > .wf-body {
+    padding: 0 22px 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    padding-top: 18px;
+  }
+
+  .step-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .step-table th {
+    text-align: left; font-family: 'Geist Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6); padding: 10px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06); font-weight: 500;
+  }
+  .step-table td {
+    padding: 12px 14px; vertical-align: top;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    color: rgba(255, 255, 255, 0.92); line-height: 1.6;
+  }
+  .step-table td:first-child { font-weight: 500; width: 230px; font-family: 'Inter', sans-serif; color: #fff; }
+  .step-table tr:last-child td { border-bottom: none; }
+
+  .phase-card {
+    flex-shrink: 0; width: 220px; border-radius: 14px;
+    background: linear-gradient(135deg, #14141c 0%, #0c0c14 100%);
+    border: 1px solid var(--border-strong);
+    padding: 16px; display: flex; flex-direction: column; gap: 8px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .phase-card:hover { transform: translateY(-3px); border-color: rgba(139, 92, 246, 0.4); box-shadow: 0 0 30px -15px rgba(124, 58, 237, 0.3); }
+
+  .stage-card {
+    flex-shrink: 0; width: 240px; border-radius: 14px;
+    background: linear-gradient(135deg, #14141c 0%, #0c0c14 100%);
+    border: 1px solid var(--border-strong);
+    overflow: hidden; display: flex; flex-direction: column;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .stage-card:hover { transform: translateY(-3px); border-color: rgba(139, 92, 246, 0.4); }
+  .stage-card .accent { height: 4px; }
+  .stage-card .body { padding: 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .stage-card .desc {
+    font-size: 11px; color: rgba(255, 255, 255, 0.85); line-height: 1.55;
+    margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .pillar { transition: all 0.25s ease; background: rgba(20, 20, 28, 0.6); border: 1px solid var(--border); border-radius: 18px; padding: 24px; }
+  .pillar:hover { transform: translateY(-4px); border-color: rgba(139, 92, 246, 0.4); box-shadow: 0 0 40px -15px rgba(124, 58, 237, 0.3); }
+  .pillar-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+
+  .pricing-row { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
+  .pricing-row:last-child { border-bottom: 0; }
+
+  .risk-card { background: rgba(20, 20, 28, 0.5); border: 1px solid var(--border-strong); border-left: 3px solid rgba(245, 158, 11, 0.6); border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; }
+
+  .step-num { width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: 'Geist Mono', monospace; font-weight: 600; font-size: 14px; background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.4); color: rgb(196, 181, 253); flex-shrink: 0; }
+
+  blockquote.pull-quote {
+    border-left: 3px solid rgba(139, 92, 246, 0.6);
+    padding: 6px 0 6px 18px;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.65;
+    font-size: 1rem;
+  }
+  @media (min-width: 768px) { blockquote.pull-quote { font-size: 1.05rem; } }
+
+  @media (max-width: 768px) { main { padding-bottom: 6rem; } }
+</style>
+</head>
+<body class="antialiased min-h-screen relative">
+
+<div class="grain"></div>
+<div class="fixed inset-0 pointer-events-none z-0" style="background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(139, 92, 246, 0.12), transparent 60%);"></div>
+
+<div class="relative max-w-[1400px] mx-auto flex z-10">
+
+  <!-- TOC SIDEBAR (desktop) -->
+  <aside class="hidden lg:block w-60 shrink-0 sticky top-0 h-screen pt-20 px-6 overflow-y-auto bg-[#0c0c12]/80 backdrop-blur-md border-r border-white/[0.06]">
+    <div class="flex items-center gap-2 mb-5">
+      <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-500 to-cyan-400 flex items-center justify-center font-display font-bold text-black text-xs">AL</div>
+      <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-white">Completa</p>
+    </div>
+    <nav class="space-y-0.5">
+      <a href="#cliente" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">01 · Cliente</a>
+      <a href="#filosofia" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">02 · Enfoque</a>
+      <a href="#diagnostico" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">03 · Diagnóstico</a>
+      <a href="#plan" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">04 · Plan</a>
+      <a href="#detalle" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">05 · Detalle por fase</a>
+      <a href="#deliverables" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">06 · Entregables</a>
+      <a href="#impacto" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">07 · Impacto</a>
+      <a href="#pricing" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">08 · Inversión</a>
+      <a href="#riesgos" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">09 · Riesgos</a>
+      <a href="#next" class="toc-link block py-2 px-3 text-sm text-white/80 border-l border-transparent">10 · Próximos pasos</a>
+    </nav>
+
+    <div class="mt-10 pt-6 border-t border-white/[0.06]">
+      <p class="font-mono text-[10px] uppercase tracking-wider text-white/60 mb-2">Cliente</p>
+      <p class="text-sm text-white">«NOMBRE PANADERÍA»</p>
+      <p class="text-xs text-white/60">6 agentes · 2 supervisores</p>
+    </div>
+    <div class="mt-4">
+      <p class="font-mono text-[10px] uppercase tracking-wider text-white/60 mb-2">Stack</p>
+      <p class="text-sm text-white">GoHighLevel · Conversation AI</p>
+      <p class="text-xs text-white/60">WhatsApp API · Facebook · Instagram</p>
+    </div>
+    <div class="mt-4">
+      <p class="font-mono text-[10px] uppercase tracking-wider text-white/60 mb-2">Implementador</p>
+      <p class="text-sm text-white">Andrés Linares</p>
+      <p class="text-xs text-white/60">ALCONSULTING</p>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="flex-1 px-5 md:px-10 py-10 md:py-20 max-w-[1100px]">
+
+    <!-- HEADER STICKY (mobile) -->
+    <div class="lg:hidden sticky top-0 z-50 -mx-5 mb-8 bg-bg/85 backdrop-blur-md border-b border-white/[0.06]">
+      <div class="px-5 py-3 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3 min-w-0">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-cyan-400 flex items-center justify-center shrink-0 font-display font-bold text-black text-xs">AL</div>
+          <div class="min-w-0">
+            <div class="text-[10px] text-white/50 uppercase tracking-wider font-mono">Propuesta completa</div>
+            <div class="display font-semibold text-sm truncate">«NOMBRE PANADERÍA»</div>
+          </div>
+        </div>
+        <span class="shrink-0 pill pill-cyan">B2</span>
+      </div>
+    </div>
+
+    <!-- HEADER HERO -->
+    <header class="mb-16 md:mb-24">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs text-white/80 mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="font-mono text-[11px]">Julio 2026 · Implementación GoHighLevel · Completa</span>
+      </div>
+      <h1 class="display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.02]">
+        Ningún lead <span class="gradient-text">perdido</span>.<br />
+        Cada comentario,<br />
+        <span class="gradient-text">una oportunidad</span>.
+      </h1>
+      <p class="mt-7 text-lg md:text-xl text-white/85 max-w-2xl leading-relaxed">
+        El sistema comercial completo en GoHighLevel: bot IA que no se traba, los tres canales unificados, seguimiento automático, gestión de reputación en redes y reportería para supervisores. Todo montado y andando.
+      </p>
+      <blockquote class="pull-quote mt-7 max-w-3xl">
+        Si la persona se sale del script del bot, el bot ya no contesta, no asigna a nadie y ahí queda la conversación. Se han perdido miles de leads por eso.
+        <span class="block not-italic font-sans text-xs text-white/55 mt-2">— Diagnóstico, reunión de descubrimiento</span>
+      </blockquote>
+      <div class="flex flex-wrap gap-2 mt-7">
+        <span class="pill pill-violet">Bot IA multicanal</span>
+        <span class="pill pill-cyan">Pipeline + CRM</span>
+        <span class="pill pill-emerald">Reputación digital</span>
+        <span class="pill pill-blue">Reportería supervisores</span>
+        <span class="pill pill-violet">8 usuarios</span>
+        <span class="pill pill-amber">USD 3.000</span>
+      </div>
+      <div class="flex flex-wrap gap-3 mt-8">
+        <a href="#plan" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-medium transition glow-violet">
+          Ver el plan completo
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+        <a href="#pricing" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.10] text-white font-medium transition">
+          Ver inversión
+        </a>
+      </div>
+    </header>
+
+    <!-- 01 · CLIENTE -->
+    <section id="cliente" class="mb-20 md:mb-24 scroll-mt-12">
+      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-violet-300 mb-3">01 · Cliente</p>
+      <h2 class="display text-2xl md:text-4xl font-bold tracking-tight mb-3">«NOMBRE PANADERÍA»</h2>
+      <p class="serif-italic text-white/85 mb-8 max-w-3xl">Panadería de consumo masivo. Atención al cliente y toma de pedidos por redes, con inversión constante en pauta — la mayoría de la gente escribe para pedir productos, información o precios.</p>
+
+      <div class="diagram-card">
+        <table class="step-table">
+          <tbody>
+            <tr><td>Negocio</td><td>Panadería de consumo masivo · distribución (B2B) + consumidor final</td></tr>
+            <tr><td>Canales de atención</td><td><span class="pill pill-emerald">WhatsApp</span> <span class="pill pill-blue">Facebook</span> <span class="pill pill-violet">Instagram</span></td></tr>
+            <tr><td>Volumen</td><td>~1.000 mensajes / día · un solo número (fijo con WhatsApp)</td></tr>
+            <tr><td>Equipo</td><td>6 agentes (reparten WhatsApp y redes) + 2 supervisores · <span class="pill pill-zinc">8 usuarios</span></td></tr>
+            <tr><td>Stack actual</td><td><span class="pill pill-amber">Atom · bot por script</span> <span class="pill pill-zinc">Odoo (B2B)</span></td></tr>
+            <tr><td>Reputación</td><td>Comentarios y quejas en redes sin seguimiento · oportunidades comerciales que se pierden</td></tr>
+            <tr><td>Implementador</td><td><span class="pill pill-cyan">Andrés Linares</span> · ALCONSULTING</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 02 · ENFOQUE -->
+    <section id="filosofia" class="mb-20 md:mb-24 scroll-mt-12">
+      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-violet-300 mb-3">02 · Enfoque</p>
+      <h2 class="display text-2xl md:text-4xl font-bold tracking-tight mb-3">Tres principios</h2>
+      <p class="serif-italic text-white/85 mb-8 max-w-3xl">No es reemplazar al equipo. Es que ningún mensaje quede sin respuesta y que cada agente atienda lo que le toca.</p>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="pillar">
+          <div class="pillar-icon mb-4" style="background: rgba(139, 92, 246, 0.15);">
+            <svg class="w-6 h-6 text-violet-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4-4 7-9 7-1.5 0-3-.3-4-.8L3 20l1-4c-.5-1-1-2.5-1-4 0-4 4-7 9-7s9 3 9 7z"/></svg>
+          </div>
+          <div class="flex items-center gap-2 mb-2"><span class="pill pill-violet">01</span><span class="font-mono text-[10px] uppercase tracking-wider text-white/50">Principio</span></div>
+          <h3 class="display font-semibold text-base mb-2">Ningún mensaje sin respuesta</h3>
+          <p class="text-sm text-white/80 leading-relaxed">El bot entiende lenguaje natural. Nunca se traba, nunca deja una conversación muerta — filtra y deriva siempre.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon mb-4" style="background: rgba(6, 182, 212, 0.15);">
+            <svg class="w-6 h-6 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </div>
+          <div class="flex items-center gap-2 mb-2"><span class="pill pill-cyan">02</span><span class="font-mono text-[10px] uppercase tracking-wider text-white/50">Principio</span></div>
+          <h3 class="display font-semibold text-base mb-2">Un solo lugar, tres canales</h3>
+          <p class="text-sm text-white/80 leading-relaxed">WhatsApp, Facebook e Instagram en un inbox. El agente correcto atiende sin saltar entre plataformas.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon mb-4" style="background: rgba(16, 185, 129, 0.15);">
+            <svg class="w-6 h-6 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <div class="flex items-center gap-2 mb-2"><span class="pill pill-emerald">03</span><span class="font-mono text-[10px] uppercase tracking-wider text-white/50">Principio</span></div>
+          <h3 class="display font-semibold text-base mb-2">La reputación también se cuida</h3>
+          <p class="text-sm text-white/80 leading-relaxed">Comentarios y quejas en redes reciben respuesta automática y seguimiento. Lo que hoy queda sin atender, se convierte en oportunidad.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 · DIAGNÓSTICO -->
+    <section id="diagnostico" class="mb-20 md:mb-24 scroll-mt-12">
+      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-violet-300 mb-3">03 · Diagnóstico</p>
+      <h2 class="display text-2xl md:text-4xl font-bold tracking-tight mb-3">Lo que hay hoy vs. lo que falta</h2>
+      <p class="serif-italic text-white/85 mb-8 max-w-3xl">Hay volumen y equipo. Falta la capa que atienda todo sin que se caiga nada.</p>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="diagram-card" style="border-color: rgba(16, 185, 129, 0.25);">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="pill pill-emerald">✓ Tienen</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-white/60">Base sólida</span>
+          </div>
+          <ul class="space-y-2.5 text-sm text-white/90">
+            <li class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">›</span><span>~1.000 mensajes/día — demanda real y constante</span></li>
+            <li class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">›</span><span>Inversión sostenida en pauta que trae leads</span></li>
+            <li class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">›</span><span>Equipo de 8 personas dedicado a atención</span></li>
+            <li class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">›</span><span>Un número único con WhatsApp ya funcionando</span></li>
+            <li class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">›</span><span>Flujo de atención ya definido (menú de opciones)</span></li>
+          </ul>
+        </div>
+
+        <div class="diagram-card" style="border-color: rgba(245, 158, 11, 0.25);">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="pill pill-amber">⚠ Falta</span>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-white/60">Lo que cubrimos</span>
+          </div>
+          <ul class="space-y-2.5 text-sm text-white/90">
+            <li class="flex gap-2"><span class="text-amber-400 shrink-0 mt-0.5">›</span><span>El bot se traba fuera del guion — miles de conversaciones perdidas</span></li>
+            <li class="flex gap-2"><span class="text-amber-400 shrink-0 mt-0.5">›</span><span>Los tres canales sin unificar en un solo inbox</span></li>
+            <li class="flex gap-2"><span class="text-amber-400 shrink-0 mt-0.5">›</span><span>Sin reparto automático ni estado de disponibilidad de los agentes</span></li>
+            <li class="flex gap-2"><span class="text-amber-400 shrink-0 mt-0.5">›</span><span>Comentarios y quejas en redes sin ningún seguimiento</span></li>
+            <li class="flex gap-2"><span class="text-amber-400 shrink-0 mt-0.5">›</span><span>Los supervisores sin visibilidad ni reportería del equipo</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · PLAN -->
+    <section id="plan" class="mb-20 md:mb-24 scroll-mt-12">
+      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-violet-300 mb-3">04 · Plan</p>
+      <h2 class="display text-2xl md:text-4xl font-bold tracking-tight mb-3">Seis fases, llave en mano</h2>
+      <p class="serif-italic text-white/85 mb-8 max-w-3xl">Lo armamos completo y lo dejamos andando, sin cortar la atención actual.</p>
+
+      <div class="diagram-card">
+        <div class="flex items-center justify-between mb-5">
+          <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">Implementación completa</p>
+          <p class="font-mono text-[10px] text-white/40">scroll →</p>
+        </div>
+        <div class="overflow-x-auto pb-3 -mx-6 px-6 md:-mx-8 md:px-8">
+          <div class="flex gap-3 items-stretch min-w-max">
+
+            <div class="phase-card">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-violet-300">F1</span>
+              <h3 class="display text-sm font-semibold text-white">Setup + Canales</h3>
+              <span class="self-start pill pill-violet">Base</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Cuenta GHL · 8 usuarios · WhatsApp API + Facebook + Instagram al inbox.</p>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="phase-card">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-violet-300">F2</span>
+              <h3 class="display text-sm font-semibold text-white">Bot IA + KB</h3>
+              <span class="self-start pill pill-violet">Agente</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Conversation AI · prompt · Base de Conocimiento · handoff a humano.</p>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="phase-card">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-violet-300">F3</span>
+              <h3 class="display text-sm font-semibold text-white">Pipeline + Campos</h3>
+              <span class="self-start pill pill-violet">CRM</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Embudo comercial · Custom Fields · tags de segmentación.</p>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="phase-card">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-violet-300">F4</span>
+              <h3 class="display text-sm font-semibold text-white">Workflows</h3>
+              <span class="self-start pill pill-cyan">Automatización</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Reparto por canal · seguimiento 2h/24h · handoffs · estado/pausa.</p>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="phase-card">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-violet-300">F5</span>
+              <h3 class="display text-sm font-semibold text-white">Reputación + Reportería</h3>
+              <span class="self-start pill pill-cyan">Redes</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Automatización de comentarios/quejas · reportería para supervisores.</p>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="phase-card" style="border-color: rgba(16, 185, 129, 0.4); box-shadow: 0 0 20px -10px rgba(16, 185, 129, 0.3);">
+              <span class="font-mono text-[10px] uppercase tracking-wider text-emerald-300">F6</span>
+              <h3 class="display text-sm font-semibold text-white">Go live + Optimización</h3>
+              <span class="self-start pill pill-emerald">Cierre</span>
+              <p class="text-[11px] text-white/75 leading-relaxed mt-1">Producción · capacitación · ajuste del bot con conversaciones reales.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 · DETALLE POR FASE -->
+    <section id="detalle" class="mb-20 md:mb-24 scroll-mt-12">
+      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-violet-300 mb-3">05 · Detalle por fase</p>
+      <h2 class="display text-2xl md:text-4xl font-bold tracking-tight mb-3">Qué pasa en cada fase</h2>
+      <p class="serif-italic text-white/85 mb-8 max-w-3xl">Tocá cada fase para abrir el detalle. Cada una cierra con algo funcionando.</p>
+
+      <details class="wf-card" open>
+        <summary>
+          <div class="flex items-center gap-3 flex-wrap">
+            <span class="pill pill-violet">F1</span>
+            <h3 class="display text-base md:text-lg font-semibold">Setup + Canales</h3>
+            <span class="pill pill-zinc">Base</span>
+          </div>
+        </summary>
+        <div class="wf-body">
+          <p class="text-sm text-white/75 mb-4 serif-italic">Todo el equipo trabajando en un solo lugar, con los tres canales entrando al mismo inbox.</p>
+          <table class="step-table">
+            <thead><tr><th>Tarea</th><th>Detalle</th></tr></thead>
+            <tbody>
+              <tr><td>Subcuenta GoHighLevel</td><td>Creación, branding y estructura base de la cuenta.</td></tr>
+              <tr><td>8 usuarios</td><td>Alta de los 6 agentes y 2 supervisores con sus permisos.</td></tr>
+              <tr><td>WhatsApp API oficial</td><td>Alta sobre el número actual — se mantiene el mismo número, cero riesgo de bloqueo.</td></tr>
+              <tr><td>Facebook + Instagram</td><td>Conexión de las páginas al inbox unificado.</td></tr>
+            </tbody>
+          </table>
+          <div class="diagram-card mt-4" style="padding: 14px; border-color: rgba(6, 182, 212, 0.3);"><span class="pill pill-cyan mb-2">Cierra con</span><p class="text-sm text-white/90 mt-2">Cuenta operativa · los tres canales entrando a un solo inbox.</p></div>
+        </div>
+      </details>
+
+      <details class="wf-card">
+        <summary>
+          <div class="flex items-center gap-3 flex-wrap">
+            <span class="pill pill-violet">F2</span>
+            <h3 class="display text-base md:text-lg font-semibold">Bot IA + Base de Conocimiento</h3>
+            <span class="pill pill-emerald">Deliverable estrella</span>
+          </div>
+        </summary>
+        <div class="wf-body">
+          <p class="text-sm text-white/75 mb-4 serif-italic">El agente que no se traba. Entiende, filtra y deriva — pase lo que pase.</p>
+          <table class="step-table">
+            <thead><tr><th>Tarea</th><th>Detalle</th></tr></thead>
+            <tbody>
+              <tr><td>Conversation AI (Bot Goals)</td><td>Identidad, prompt y objetivos. Entiende lenguaje natural: precio, pedido personalizado, envío, horarios o solo "hola".</td></tr>
+              <tr><td>Base de Conocimiento</td><td>Productos, horarios, FAQs y políticas cargadas para que responda con datos reales.</td></tr>
+              <tr><td>Filtro de intención</td><td>El bot identifica qué necesita cada persona antes de derivar.</td></tr>
+              <tr><td>Handoff a humano</td><td>Pasa la conversación al agente correcto sin cortar el hilo.</td></tr>
+            </tbody>
+          </table>
+          <div class="diagram-card mt-4" style="padding: 14px; border-color: rgba(6, 182, 212, 0.3);"><span class="pill pill-cyan mb-2">Cierra con</span><p class="text-sm text-white/90 mt-2">Bot operativo que filtra y deriva cualquier conversación, sin trabarse.</p></div>
+        </div>
+      </details>
+
+      <details class="wf-card">
+        <summary>
+          <div class="flex items-center gap-3 flex-wrap">
+            <span class="pill pill-violet">F3</span>
+            <h3 class="display text-base md:text-lg font-semibold">Pipeline + Custom Fields</h3>
+            <span class="pill pill-cyan">CRM</span>
+          </div>
+        </summary>
+        <div class="wf-body">
+          <p class="text-sm text-white/75 mb-4 serif-italic">El embudo comercial para que ningún contacto se pierda en el WhatsApp diario.</p>
+          <table class="step-table">
+            <thead><tr><th>Tarea</th><th>Detalle</th></tr></thead>
+            <tbody>
+              <tr><td>Pipeline de ventas</td><td>Etapas del proceso comercial de la panadería en GHL.</td></tr>
+              <tr><td>Custom Fields</td><td>Campos para capturar interés, producto, tipo de cliente.</td></tr>
+              <tr><td>Tags de segmentación</td><td>Etiquetado por canal, interés y tipo de cliente para filtrar y reportar.</td></tr>
+            </tbody>
+          </table>
+          <div class="diagram-card mt-4" style="padding: 14px; border-color: rgba(6, 182, 212, 0.3);"><span class="pill pill-cyan mb-2">Cierra con</span><p class="text-sm text-white/90 mt-2">Pipeline vivo con cada contacto segmentado y ubicado.</p></div>
+        </div>
+      </details>
+
+      <details class="wf-card">
+        <summary>
+          <div class="flex items-center gap-3 flex-wrap">
+            <span class="pill pill-violet">F4</span>
+            <h3 class="display text-base md:text-lg font-semibold">Workflows de automatización</h3>
+            <span class="pill pill-cyan">Automatización</span>
+          </div>
+        </summary>
+        <div class="wf-body">
+          <p class="text-sm text-white/75 mb-4 serif-italic">Lo que hoy se hace a mano — repartir, seguir, derivar — queda andando solo.</p>
+          <table class="step-table">
+            <thead><tr><th>Workflow</th><th>Detalle</th></tr></thead>
+            <tbody>
+              <tr><td>Reparto por canal</td><td>Asignación automática al agente correcto según canal y disponibilidad.</td></tr>
+              <tr><td>Estado / pausa de disponibilidad</td><td>Quien sale a almorzar o se levanta se pone en pausa y no le caen mensajes hasta volver.</td></tr>
+              <tr><td>Seguimiento 2h / 24h</td><td>Recordatorios automáticos para que ningún lead quede sin respuesta.</td></tr>
+              <tr><td>Handoffs</td><td>Derivaciones bot → humano por pedido de agenda, imagen o transferencia.</td></tr>
+            </tbody>
+          </table>
+          <div class="diagram-card mt-4" style="padding: 14px; border-color: rgba(6, 182, 212, 0.3);"><span class="pill pill-cyan mb-2">Cierra con</span><p class="text-sm text-white/90 mt-2">Reparto, pausa y seguimiento funcionando automáticamente.</p></div>
+        </div>
+      </details>
+
+      <details class="wf-card">
+        <summary>
+          <div class="flex items-center gap-3 flex-wrap">
+            <span class="pill pill-violet">F5</span>
+            <h3 class="display text-base md:text-lg font-semibold">Reputación digital + Reportería</h3>
+            <span class="pill pill-emerald">Diferencial</span>
+          </div>
+        </summary>
+        <div class="wf-body">
+          <p class="text-sm text-white/75 mb-4 serif-italic">Lo que hoy queda sin atender en redes se convierte en respuesta y oportunidad.</p>
+          <table class="step-table">
+            <thead><tr><th>Tarea</th><th>Detalle</th></tr></thead>
+            <tbody>
+              <tr><td>Gestión de comentarios/quejas</td><td>Respuesta automática ("recibimos tu mensaje, te escribimos por DM") + apertura de conversación privada y seguimiento.</td></tr>
+              <tr><td>Aprovechamiento de comentarios</td><td>Comentarios positivos o casuales se capturan como oportunidad comercial.</td></tr>
+              <tr><td>Reportería para supervisores</td><td>Visibilidad del volumen, reparto y desempeño del equipo para los 2 supervisores.</td></tr>
+            </tbody>
+          </table>
+          <div class="diagram-card mt-4" style="padding: 14px; border-color: rgba(6, 182, 212, 0.3);"><span class="pill pill-cyan mb-2">Cierra con</span><p class="text-sm text-white/90 mt-2">Reputación gestionada + tablero de supervisión activo.</p></div>
+        </div>
+      </details>
+
+      <details class="wf-card">
+        <summary>
+          <div class="flex items-center gap-3 flex-wrap">
+            <span class="pill pill-emerald">F6</span>
+            <h3 class="display text-base md:text-lg font-semibold">Go live + Optimización</h3>
+            <span class="pill pill-emerald">Cierre</span>
+          </div>
+        </summary>
+        <div class="wf-body">
+          <p class="text-sm text-white/75 mb-4 serif-italic">Pasaje a producción con el equipo capacitado y el bot afinado con casos reales.</p>
+          <table class="step-table">
+            <thead><tr><th>Tarea</th><th>Detalle</th></tr></thead>
+            <tbody>
+              <tr><td>Pruebas con casos reales</td><td>Batería de conversaciones de prueba antes del switch.</td></tr>
+              <tr><td>Pasaje a producción</td><td>Switch del bot Atom al nuevo sistema sin cortar la atención.</td></tr>
+              <tr><td>Capacitación del equipo</td><td>Los 8 usuarios entrenados en el inbox, el reparto y la pausa.</td></tr>
+              <tr><td>Optimización</td><td>Ajuste del bot con las primeras conversaciones reales.</td></tr>
+            </tbody>
+          </table>
+          <div class="diagram-card mt-4 glow-emerald" style="padding: 14px; border-color: rgba(16, 185, 129, 0.4);"><span class="pill pill-emerald mb-2">Cierra con</span><p class="text-sm text-white/90 mt-2">Sistema completo en producción · equipo capacitado · bot afinado.</p></div>
+        </div>
+      </details>
+    </section>
+
+    <!-- 06 · ENTREGABLES -->
+    <section id="deliverables" class="mb-20 md:mb-24 scroll-mt-12">
+      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-cyan-300 mb-3">06 · Entregables</p>
+      <h2 class="display text-2xl md:text-4xl font-bold tracking-tight mb-3">Lo que queda funcionando</h2>
+      <p class="serif-italic text-white/85 mb-8 max-w-3xl">Todo montado y andando en producción — no una lista de promesas.</p>
+
+      <div class="diagram-card">
+        <div class="overflow-x-auto pb-3 -mx-6 px-6 md:-mx-8 md:px-8">
+          <div class="flex gap-3 items-stretch min-w-max">
+
+            <div class="stage-card">
+              <div class="accent" style="background: linear-gradient(90deg, #7c3aed, #a78bfa);"></div>
+              <div class="body">
+                <span class="font-mono text-[10px] uppercase tracking-wider text-white/60">Canales</span>
+                <h3 class="display text-base font-semibold leading-snug">Inbox unificado</h3>
+                <span class="self-start pill pill-violet">WA + FB + IG</span>
+                <span class="self-start pill pill-cyan">8 usuarios</span>
+                <p class="desc">Los tres canales en un solo lugar. WhatsApp API oficial sobre el número actual.</p>
+              </div>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="stage-card">
+              <div class="accent" style="background: linear-gradient(90deg, #06b6d4, #22d3ee);"></div>
+              <div class="body">
+                <span class="font-mono text-[10px] uppercase tracking-wider text-white/60">Bot</span>
+                <h3 class="display text-base font-semibold leading-snug">Agente IA + KB</h3>
+                <span class="self-start pill pill-cyan">No se traba</span>
+                <span class="self-start pill pill-cyan">Handoff</span>
+                <p class="desc">Bot que entiende lenguaje natural, filtra la intención y deriva al agente correcto.</p>
+              </div>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="stage-card">
+              <div class="accent" style="background: linear-gradient(90deg, #7c3aed, #a78bfa);"></div>
+              <div class="body">
+                <span class="font-mono text-[10px] uppercase tracking-wider text-white/60">CRM</span>
+                <h3 class="display text-base font-semibold leading-snug">Pipeline + Campos</h3>
+                <span class="self-start pill pill-violet">Embudo</span>
+                <span class="self-start pill pill-cyan">Segmentación</span>
+                <p class="desc">Pipeline comercial + Custom Fields + tags. Cada contacto ubicado y segmentado.</p>
+              </div>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="stage-card">
+              <div class="accent" style="background: linear-gradient(90deg, #06b6d4, #22d3ee);"></div>
+              <div class="body">
+                <span class="font-mono text-[10px] uppercase tracking-wider text-white/60">Automatización</span>
+                <h3 class="display text-base font-semibold leading-snug">Reparto + Seguimiento</h3>
+                <span class="self-start pill pill-cyan">Estado/pausa</span>
+                <span class="self-start pill pill-cyan">Follow-up</span>
+                <p class="desc">Reparto por canal, estado de disponibilidad, seguimiento 2h/24h y handoffs.</p>
+              </div>
+            </div>
+            <div class="flex items-center text-white/30 px-1">▸</div>
+
+            <div class="stage-card glow-emerald">
+              <div class="accent" style="background: linear-gradient(90deg, #10b981, #34d399);"></div>
+              <div class="body">
+                <span class="font-mono text-[10px] uppercase tracking-wider text-white/60">Reputación</span>
+                <h3 class="display text-base font-semibold leading-snug">Redes + Reportería</h3>
+                <span class="self-start pill pill-emerald">Comentarios</span>
+                <span class="self-start pill pill-emerald">Supervisión</span>
+                <p class="desc">Gestión automática de comentarios y quejas + tablero de reportería para supervisores.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 · IMPACTO -->
+    <section id="impacto" class="mb-20 md:mb-24 scroll-mt-12">
+      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-300 mb-3">07 · Impacto</p>
+      <h2 class="display text-2xl md:text-4xl font-bold tracking-tight mb-3">Dónde se ve el cambio</h2>
+      <p class="serif-italic text-white/85 mb-8 max-w-3xl">El objetivo es simple: que ninguna conversación se caiga y que el equipo atienda mejor con el mismo esfuerzo.</p>
+
+      <div class="diagram-card">
+        <table class="step-table">
+          <thead><tr><th>Cambio</th><th>Antes</th><th>Después</th></tr></thead>
+          <tbody>
+            <tr><td>Conversaciones fuera del guion</td><td>El bot se traba, la conversación muere</td><td><span class="pill pill-emerald">El bot entiende y deriva</span></td></tr>
+            <tr><td>Los tres canales</td><td>Separados, se salta entre plataformas</td><td><span class="pill pill-emerald">Un solo inbox</span></td></tr>
+            <tr><td>Reparto entre agentes</td><td>Manual, sin pausa</td><td><span class="pill pill-emerald">Automático + estado/pausa</span></td></tr>
+            <tr><td>Comentarios y quejas en redes</td><td>Sin respuesta ni seguimiento</td><td><span class="pill pill-emerald">Respuesta + seguimiento automático</span></td></tr>
+            <tr style="background: rgba(16, 185, 129, 0.06);"><td style="color: #fff; font-weight: 600;">Supervisión del equipo</td><td>Sin visibilidad</td><td><span class="pill pill-emerald" style="font-weight:600;">Reportería en vivo</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 08 · INVERSIÓN -->
+    <section id="pricing" class="mb-20 md:mb-24 scroll-mt-12">
+      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-amber-300 mb-3">08 · Inversión</p>
+      <h2 class="display text-2xl md:text-4xl font-bold tracking-tight mb-3">Pricing transparente</h2>
+      <p class="serif-italic text-white/85 mb-8 max-w-3xl">Una inversión one-time de implementación completa + el software recurrente que usa el negocio.</p>
+
+      <!-- Recurrente -->
+      <div class="diagram-card mb-5">
+        <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+          <div>
+            <span class="font-mono text-[10px] uppercase tracking-wider text-white/60">Recurrente</span>
+            <h3 class="display text-xl font-semibold mt-1">Software mensual</h3>
+          </div>
+          <span class="pill pill-cyan">Lo paga el negocio</span>
+        </div>
+        <div>
+          <div class="pricing-row">
+            <div>
+              <p class="font-medium">Plataforma GoHighLevel con IA</p>
+              <p class="text-xs text-white/55 mt-0.5">Subcuenta · 8 usuarios · Conversation AI · pipeline · workflows · inbox multicanal · reportería</p>
+            </div>
+            <p class="font-mono text-lg font-semibold">USD 97<span class="text-xs text-white/55 font-normal">/mes</span></p>
+          </div>
+          <div class="pricing-row">
+            <div>
+              <p class="font-medium">WhatsApp API oficial (Meta)</p>
+              <p class="text-xs text-white/55 mt-0.5">Mantiene el número actual · cero riesgo de bloqueo · + consumo Meta por conversación</p>
+            </div>
+            <p class="font-mono text-lg font-semibold">USD 20<span class="text-xs text-white/55 font-normal">/mes</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- One-time -->
+      <div class="diagram-card relative overflow-hidden glow-violet" style="background: linear-gradient(135deg, rgba(124, 58, 237, 0.18), rgba(34, 211, 238, 0.06)); border-color: rgba(139, 92, 246, 0.4);">
+        <div class="absolute top-0 right-0 px-3 py-1 text-[10px] font-mono uppercase tracking-wider bg-violet-600 text-white rounded-bl-xl">Implementación completa</div>
+        <span class="font-mono text-[10px] uppercase tracking-wider text-violet-300">One-time · implementación</span>
+        <h3 class="display text-2xl md:text-3xl font-bold mt-1 mb-1">Sistema completo, llave en mano</h3>
+        <p class="display text-5xl md:text-6xl font-bold tracking-tight mb-5"><span class="text-violet-200/80">USD</span> <span class="gradient-text">3.000</span></p>
+        <p class="text-sm text-white/80 mb-4 font-medium">Todo lo del arranque, más:</p>
+        <div class="grid md:grid-cols-2 gap-2.5 text-sm">
+          <div class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">✓</span><span>Bot IA agente multicanal + Base de Conocimiento</span></div>
+          <div class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">✓</span><span>WhatsApp + Facebook + Instagram unificados</span></div>
+          <div class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">✓</span><span>Pipeline comercial + Custom Fields + tags</span></div>
+          <div class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">✓</span><span>Reparto por canal + estado/pausa de agentes</span></div>
+          <div class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">✓</span><span>Seguimiento 2h/24h + handoffs bot→humano</span></div>
+          <div class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">✓</span><span>Reputación digital: comentarios y quejas en redes</span></div>
+          <div class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">✓</span><span>Reportería para los 2 supervisores</span></div>
+          <div class="flex gap-2"><span class="text-emerald-400 shrink-0 mt-0.5">✓</span><span>Optimización del bot + capacitación de los 8 usuarios</span></div>
+        </div>
+      </div>
+
+      <!-- Total -->
+      <div class="diagram-card mt-5 glow-emerald" style="border-color: rgba(16, 185, 129, 0.35);">
+        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+          <p class="font-mono text-[10px] uppercase tracking-wider text-white/60">Para arrancar</p>
+          <p class="display text-2xl md:text-3xl font-bold text-emerald-300">USD 3.000 + software</p>
+        </div>
+        <p class="text-xs text-white/55">USD 3.000 implementación completa (one-time) + USD 117/mes de software (USD 97 GHL con IA + USD 20 WhatsApp API) + consumo Meta por conversación.</p>
+      </div>
+    </section>
+
+    <!-- 09 · RIESGOS -->
+    <section id="riesgos" class="mb-20 md:mb-24 scroll-mt-12">
+      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-amber-300 mb-3">09 · Transparencia</p>
+      <h2 class="display text-2xl md:text-4xl font-bold tracking-tight mb-3">Qué puede salir mal — y qué hacemos</h2>
+      <p class="serif-italic text-white/85 mb-8 max-w-3xl">Identificados antes de empezar. Cada uno con su plan.</p>
+
+      <div class="risk-card">
+        <div class="flex items-start gap-3">
+          <span class="font-mono text-xs text-amber-300 font-semibold mt-0.5">R1</span>
+          <div>
+            <p class="font-medium mb-1">El número es único y crítico para el negocio</p>
+            <p class="text-sm text-white/75"><span class="text-amber-300 font-semibold">Mitigación:</span> usamos WhatsApp API oficial de Meta. Es el canal sin riesgo de bloqueo — no arriesgamos el número principal con conexiones no oficiales.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="risk-card">
+        <div class="flex items-start gap-3">
+          <span class="font-mono text-xs text-amber-300 font-semibold mt-0.5">R2</span>
+          <div>
+            <p class="font-medium mb-1">Meta tarda 1–3 días en aprobar el alta y las plantillas</p>
+            <p class="text-sm text-white/75"><span class="text-amber-300 font-semibold">Mitigación:</span> el alta de WhatsApp API y las plantillas se piden al inicio, para que estén aprobadas antes del go live.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="risk-card">
+        <div class="flex items-start gap-3">
+          <span class="font-mono text-xs text-amber-300 font-semibold mt-0.5">R3</span>
+          <div>
+            <p class="font-medium mb-1">Migrar del bot actual sin cortar la atención</p>
+            <p class="text-sm text-white/75"><span class="text-amber-300 font-semibold">Mitigación:</span> el nuevo sistema se arma y prueba en paralelo. El switch se hace recién cuando está validado — sin ventana de caída.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="risk-card">
+        <div class="flex items-start gap-3">
+          <span class="font-mono text-xs text-amber-300 font-semibold mt-0.5">R4</span>
+          <div>
+            <p class="font-medium mb-1">Volumen alto (~1.000 mensajes/día)</p>
+            <p class="text-sm text-white/75"><span class="text-amber-300 font-semibold">Mitigación:</span> el reparto y el estado/pausa se configuran para distribuir la carga entre los 6 agentes sin saturar a nadie.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="risk-card">
+        <div class="flex items-start gap-3">
+          <span class="font-mono text-xs text-amber-300 font-semibold mt-0.5">R5</span>
+          <div>
+            <p class="font-medium mb-1">La Base de Conocimiento arranca incompleta</p>
+            <p class="text-sm text-white/75"><span class="text-amber-300 font-semibold">Mitigación:</span> relevamos productos, precios y FAQs antes del go live, y el bot se afina con conversaciones reales en la fase de optimización.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 · PRÓXIMOS PASOS -->
+    <section id="next" class="mb-20 md:mb-24 scroll-mt-12">
+      <p class="font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-300 mb-3">10 · Próximos pasos</p>
+      <h2 class="display text-2xl md:text-4xl font-bold tracking-tight mb-3">Cómo empezamos</h2>
+      <p class="serif-italic text-white/85 mb-8 max-w-3xl">Pasos concretos para poner el reloj en marcha.</p>
+
+      <div class="space-y-3">
+        <div class="diagram-card flex items-start gap-4" style="padding: 18px;">
+          <span class="step-num">1</span>
+          <div class="flex-1 pt-1"><p class="text-sm">Confirman la aceptación de la propuesta.</p></div>
+        </div>
+        <div class="diagram-card flex items-start gap-4" style="padding: 18px;">
+          <span class="step-num">2</span>
+          <div class="flex-1 pt-1"><p class="text-sm">Damos de alta el WhatsApp API oficial sobre el número actual (aprobación de Meta 1–3 días).</p></div>
+        </div>
+        <div class="diagram-card flex items-start gap-4" style="padding: 18px;">
+          <span class="step-num">3</span>
+          <div class="flex-1 pt-1"><p class="text-sm">Andrés crea la subcuenta GHL y carga a los 8 usuarios del equipo.</p></div>
+        </div>
+        <div class="diagram-card flex items-start gap-4" style="padding: 18px;">
+          <span class="step-num">4</span>
+          <div class="flex-1 pt-1"><p class="text-sm">Relevamos productos, precios y FAQs para la Base de Conocimiento.</p></div>
+        </div>
+        <div class="diagram-card flex items-start gap-4 glow-emerald" style="padding: 18px; border-color: rgba(16, 185, 129, 0.35);">
+          <span class="step-num" style="background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.4); color: rgb(167,243,208);">5</span>
+          <div class="flex-1 pt-1"><p class="text-sm font-medium">Arranca la implementación completa.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="mt-20 pt-10 border-t border-white/[0.06]">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <p class="display font-bold text-base">Andrés Linares</p>
+          <p class="text-sm text-white/65">ALCONSULTING · Implementación GoHighLevel + IA</p>
+        </div>
+        <p class="font-mono text-[10px] uppercase tracking-wider text-white/40">Propuesta completa · Julio 2026</p>
+      </div>
+    </footer>
+
+  </main>
+
+</div>
+
+<!-- STICKY CTA MOBILE -->
+<div class="lg:hidden fixed bottom-0 inset-x-0 z-40 backdrop-blur-md border-t border-white/[0.06] p-3" style="background: rgba(10, 10, 15, 0.95);">
+  <a href="#pricing" class="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-medium transition glow-violet">
+    Ver inversión
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+  </a>
+</div>
+
+</body>
+</html>
